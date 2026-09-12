@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DisasterBridge | Emergency Communication Network</title>
+
+    <meta
+        name="description"
+        content="Disasterbridge - Offline-first emergency communication and rescue coordination system."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <div class="logo-icon">DB</div>
+
+            <div>
+                <h1>DISASTER BRIDGE</h1>
+                <span>Emergency Communication Network</span>
+            </div>
+        </div>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            <span id="systemStatus">SYSTEM ONLINE</span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Emergency Banner -->
+
+        <section class="emergency-banner">
+
+            <div>
+                <span class="banner-label">EMERGENCY NETWORK</span>
+
+                <h2>
+                    When the network fails,
+                    <strong>DisasterBridge keeps people connected.</strong>
+                </h2>
+
+                <p>
+                    Offline-first emergency communication,
+                    intelligent prioritization and rescue coordination.
+                </p>
+            </div>
+
+            <button
+                class="sos-button"
+                id="sosButton"
+                onclick="sendSOS()"
+            >
+                <span>⚠</span>
+                SEND SOS
+            </button>
+
+        </section>
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">📡</div>
+
+                <div>
+                    <span class="stat-title">MESH NODES</span>
+                    <strong id="meshNodes">24</strong>
+                    <small>Connected devices</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🆘</div>
+
+                <div>
+                    <span class="stat-title">ACTIVE SOS</span>
+                    <strong id="activeSOS">7</strong>
+                    <small>Awaiting response</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🚑</div>
+
+                <div>
+                    <span class="stat-title">RESCUE TEAMS</span>
+                    <strong id="rescueTeams">5</strong>
+                    <small>Currently available</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🤖</div>
+
+                <div>
+                    <span class="stat-title">AI CLASSIFICATION</span>
+                    <strong>ACTIVE</strong>
+                    <small>Emergency analysis</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="dashboard-grid">
+
+            <!-- Network -->
+
+            <div class="panel network-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="section-label">NETWORK</span>
+                        <h3>DisasterBridge Network</h3>
+                    </div>
+
+                    <span class="live-badge">
+                        LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="network-visual">
+
+                    <div class="network-line line-1"></div>
+                    <div class="network-line line-2"></div>
+                    <div class="network-line line-3"></div>
+                    <div class="network-line line-4"></div>
+
+                    <div class="node main-node">
+                        <span>RESCUE</span>
+                    </div>
+
+                    <div class="node node-1">
+                        <span>N01</span>
+                    </div>
+
+                    <div class="node node-2">
+                        <span>N02</span>
+                    </div>
+
+                    <div class="node node-3">
+                        <span>N03</span>
+                    </div>
+
+                    <div class="node node-4">
+                        <span>N04</span>
+                    </div>
+
+                    <div class="node node-5">
+                        <span>N05</span>
+                    </div>
+
+                    <div class="node node-6">
+                        <span>N06</span>
+                    </div>
+
+                </div>
+
+
+                <div class="network-footer">
+
+                    <div>
+                        <span class="legend-dot online"></span>
+                        Online node
+                    </div>
+
+                    <div>
+                        <span class="legend-dot relay"></span>
+                        Relay node
+                    </div>
+
+                    <div>
+                        <span class="legend-dot emergency"></span>
+                        Emergency
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI -->
+
+            <div class="panel ai-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="section-label">AI ENGINE</span>
+                        <h3>Emergency Intelligence</h3>
+                    </div>
+
+                    <span class="ai-status">
+                        ACTIVE
+                    </span>
+
+                </div>
+
+
+                <div class="ai-score">
+
+                    <div class="score-circle">
+                        <span id="aiScore">87</span>
+                        <small>/100</small>
+                    </div>
+
+                    <div>
+                        <span class="severity-label">
+                            CURRENT SEVERITY
+                        </span>
+
+                        <h4 id="severityText">
+                            CRITICAL
+                        </h4>
+
+                        <p>
+                            AI detected a high-priority emergency
+                            requiring immediate response.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="ai-analysis">
+
+                    <div class="analysis-item">
+                        <span>Emergency Type</span>
+                        <strong>TRAPPED PERSON</strong>
+                    </div>
+
+                    <div class="analysis-item">
+                        <span>Location</span>
+                        <strong>2.4 km NE</strong>
+                    </div>
+
+                    <div class="analysis-item">
+                        <span>Estimated Victims</span>
+                        <strong>3</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SOS QUEUE ================= -->
+
+        <section class="panel sos-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <span class="section-label">EMERGENCY QUEUE</span>
+                    <h3>Priority SOS Requests</h3>
+                </div>
+
+                <button
+                    class="refresh-button"
+                    onclick="refreshRequests()"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Priority</th>
+                            <th>Request ID</th>
+                            <th>Emergency</th>
+                            <th>Location</th>
+                            <th>Mesh Hops</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="sosTable">
+
+                        <tr>
+
+                            <td>
+                                <span class="priority critical">
+                                    CRITICAL
+                                </span>
+                            </td>
+
+                            <td>#DM-1042</td>
+
+                            <td>Trapped Person</td>
+
+                            <td>2.4 km NE</td>
+
+                            <td>4 hops</td>
+
+                            <td>
+                                <span class="request-status waiting">
+                                    WAITING
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <span class="priority high">
+                                    HIGH
+                                </span>
+                            </td>
+
+                            <td>#DM-1041</td>
+
+                            <td>Medical Emergency</td>
+
+                            <td>1.8 km SE</td>
+
+                            <td>2 hops</td>
+
+                            <td>
+                                <span class="request-status assigned">
+                                    ASSIGNED
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <span class="priority high">
+                                    HIGH
+                                </span>
+                            </td>
+
+                            <td>#DM-1039</td>
+
+                            <td>Fire</td>
+
+                            <td>3.1 km NW</td>
+
+                            <td>5 hops</td>
+
+                            <td>
+                                <span class="request-status waiting">
+                                    WAITING
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <span class="priority medium">
+                                    MEDIUM
+                                </span>
+                            </td>
+
+                            <td>#DM-1037</td>
+
+                            <td>Missing Person</td>
+
+                            <td>4.6 km SW</td>
+
+                            <td>6 hops</td>
+
+                            <td>
+                                <span class="request-status resolved">
+                                    RESOLVED
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-number">01</div>
+
+                <h3>Offline Communication</h3>
+
+                <p>
+                    Devices can exchange emergency information
+                    without depending entirely on cellular towers
+                    or internet connectivity.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">02</div>
+
+                <h3>AI Priority Engine</h3>
+
+                <p>
+                    Emergency messages can be classified and
+                    prioritized according to severity and
+                    available information.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">03</div>
+
+                <h3>Store & Forward</h3>
+
+                <p>
+                    Messages can move through available nodes
+                    until they reach a rescue-connected node.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">04</div>
+
+                <h3>Rescue Coordination</h3>
+
+                <p>
+                    Rescue teams can monitor emergency requests,
+                    assign responses and track network activity.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= SOS MODAL ================= -->
+
+    <div
+        class="modal"
+        id="sosModal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-button"
+                onclick="closeSOS()"
+            >
+                ×
+            </button>
+
+            <div class="modal-icon">
+                ⚠
+            </div>
+
+            <h2>Emergency SOS</h2>
+
+            <p>
+                Your emergency request will be added to the
+                DisasterBridge priority queue.
+            </p>
+
+
+            <div class="location-box">
+
+                <span>📍 Location</span>
+
+                <strong id="locationText">
+                    Detecting location...
+                </strong>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="cancel-button"
+                    onclick="closeSOS()"
+                >
+                    CANCEL
+                </button>
+
+                
+                <div class="emergency-type">
+    <label for="emergencyType">Emergency Type</label>
+
+    <select id="emergencyType">
+        <option value="Trapped Person">🧍 Trapped Person</option>
+        <option value="Fire">🔥 Fire</option>
+        <option value="Medical Emergency">🏥 Medical Emergency</option>
+        <option value="Missing Person">🔎 Missing Person</option>
+        <option value="Food / Water">💧 Food / Water</option>
+        <option value="Other Emergency">🚨 Other Emergency</option>
+    </select>
+</div>
+
+                <button
+                    class="confirm-sos"
+                    onclick="confirmSOS()"
+                >
+                    CONFIRM SOS
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        <span id="toastMessage">
+            Message
+        </span>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

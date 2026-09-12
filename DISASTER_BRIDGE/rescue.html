@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Disaster Bridge | Rescue Dashboard</title>
+
+    <link rel="stylesheet" href="rescue.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            <span>DB</span>
+            <div>
+                <h1>DISASTER BRIDGE</h1>
+                <p>RESCUE COMMAND CENTER</p>
+            </div>
+        </div>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            RESCUE SYSTEM ONLINE
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="dashboard-title">
+
+            <div>
+                <h2>Emergency Response Dashboard</h2>
+
+                <p>
+                    Real-time emergency requests received
+                    through the Disaster Bridge network.
+                </p>
+            </div>
+
+            <button onclick="loadSOSRequests()">
+                ↻ REFRESH
+            </button>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>🚨</span>
+                <div>
+                    <p>ACTIVE SOS</p>
+                    <h3 id="activeSOS">0</h3>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>🔴</span>
+                <div>
+                    <p>CRITICAL</p>
+                    <h3 id="criticalSOS">0</h3>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>⚠️</span>
+                <div>
+                    <p>HIGH PRIORITY</p>
+                    <h3 id="highSOS">0</h3>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>📍</span>
+                <div>
+                    <p>GPS LOCATIONS</p>
+                    <h3 id="gpsCount">0</h3>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- SOS REQUESTS -->
+
+        <section class="requests-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Emergency Requests</h2>
+                    <p>Prioritized by AI emergency classification</p>
+                </div>
+
+                <span id="lastUpdated">
+                    Waiting for data...
+                </span>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>EMERGENCY</th>
+                            <th>LOCATION</th>
+                            <th>PRIORITY</th>
+                            <th>AI SCORE</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="sosTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="rescue.js"></script>
+
+</body>
+
+</html>

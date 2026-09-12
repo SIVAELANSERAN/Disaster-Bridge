@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "emergency_type": "Trapped Person",
+    "latitude": null,
+    "longitude": null,
+    "priority": "CRITICAL",
+    "ai_score": 95,
+    "message_id": "SOS-1789231519719-6amdh",
+    "hop_count": 0,
+    "ttl": 10,
+    "status": "WAITING",
+    "created_at": "2026-09-12T16:45:19.719Z"
+  },
+  {
+    "id": 2,
+    "emergency_type": "Trapped Person",
+    "latitude": "10.162235",
+    "longitude": "79.032008",
+    "priority": "CRITICAL",
+    "ai_score": 95,
+    "message_id": "SOS-1789231677545-dwx2s",
+    "hop_count": 0,
+    "ttl": 10,
+    "status": "RESPONDING",
+    "created_at": "2026-09-12T16:47:57.545Z"
+  },
+  {
+    "id": 3,
+    "emergency_type": "Fire",
+    "latitude": "10.162235",
+    "longitude": "79.032008",
+    "priority": "CRITICAL",
+    "ai_score": 95,
+    "message_id": "SOS-1789231694544-hj62u",
+    "hop_count": 0,
+    "ttl": 10,
+    "status": "WAITING",
+    "created_at": "2026-09-12T16:48:14.544Z"
+  },
+  {
+    "id": 4,
+    "emergency_type": "Fire",
+    "latitude": "10.162235",
+    "longitude": "79.032008",
+    "priority": "CRITICAL",
+    "ai_score": 95,
+    "message_id": "SOS-1789231697555-kqmdo",
+    "hop_count": 0,
+    "ttl": 10,
+    "status": "RESPONDING",
+    "created_at": "2026-09-12T16:48:17.555Z"
+  }
+]
